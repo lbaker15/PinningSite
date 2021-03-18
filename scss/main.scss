@@ -195,6 +195,8 @@ body {
   position: absolute; z-index: 100;
   bottom:0; transform-origin: top; 
   opacity: 1;
+  margin-top: 200px;
+  //transform: translateY(100px);
 }
 .snowflake1 {
   background-image: url('../imagesNew/ee5.png');

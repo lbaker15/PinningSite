@@ -3,6 +3,7 @@ import {gsap} from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+console.log('index updated new')
 //WHEN PINNING, THE NEXT START IS EG 1PX ON FROM THE LAST END (DEFAULTS TO 100%)
 //SO START 1PX TOP IS 1PX ON FROM WHERE THE LAST PIN ENDED? END DEFAULTS TO BOTTOM OF UPPER ELEMENT 
 //IF WERE NOT USING FIXED POSITIONS YOU COULD JUST SET PADDING BOTTOM OF THE UPPER ELEMENT
@@ -16,11 +17,11 @@ gsap.to(".panel3", {
       end: '+=120%',
       scrub: 0.5,
       onUpdate: (self) => {
-        console.log(self.progress)
+        let num = -(self.progress * 400) + 525;      
+        gsap.to('.extraImg', {y: num})
       },
       pin: true,
       pinSpacing: true
-      // markers: {startColor: 'red'}
     }
 });
 
@@ -99,27 +100,6 @@ gsap.to(".panel0", {
 
 
 
-gsap.fromTo(".extraImg", {yPercent: 105.5}, {
-  yPercent: -19.5,
-  // marginTop: 100+"vh",
-  scrollTrigger: {
-      trigger: "#trig",
-      start: "1px top",
-      end: '+=250%',
-      // markers: {endColor: 'white'},
-      scrub: 0.5
-  }
-})
 
-// gsap.fromTo(".extraImg2", {y: 200}, {
-//   y: -200,
-//   // marginTop: 100+"vh",
-//   scrollTrigger: {
-//       trigger: "#trig2",
-//       start: "top bottom",
-//       end: '+=250%',
-//       // onUpdate: (self) => console.log(self),
-//       // markers: {endColor: 'white'},
-//       scrub: 0.5
-//   }
-// })
+
+
